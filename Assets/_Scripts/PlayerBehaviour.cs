@@ -54,8 +54,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         float mouseX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
         float mouseY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-        this._dx = mouseX - transform.position.x;
-        this._dy = mouseY - transform.position.y;
+        this._dx = 0 - transform.position.x;
+        this._dy = 0 - transform.position.y;
         // find the angle of rotation
 
         this._direction = Mathf.Atan2(this._dy, this._dx) * Mathf.Rad2Deg  - 90.0f;
@@ -99,23 +99,6 @@ public class PlayerBehaviour : MonoBehaviour
                     transform.position.x - (this.speed * Mathf.Sin(newDirection * Mathf.Deg2Rad)),
                     transform.position.y - (this.speed * Mathf.Cos(newDirection * Mathf.Deg2Rad)));
             }
-            if (Input.GetAxis("Vertical") > 0.2)
-            {
-                if((Mathf.Abs(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x) > 0.1) &&
-                  (Mathf.Abs(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y) > 0.1)) {
-                    transform.position = new Vector2(
-                    transform.position.x - (this.speed * Mathf.Cos(newDirection * Mathf.Deg2Rad)),
-                    transform.position.y + (this.speed * Mathf.Sin(newDirection * Mathf.Deg2Rad)));
-                  }
-
-            }
-            if (Input.GetAxis("Vertical") < -0.2)
-            {
-                transform.position = new Vector2(
-                    transform.position.x + (this.speed * Mathf.Cos(newDirection * Mathf.Deg2Rad)),
-                    transform.position.y - (this.speed * Mathf.Sin(newDirection * Mathf.Deg2Rad)));
-            }
-
     }
 
     private void _checkBounds()

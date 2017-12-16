@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1378513799027618, guid: 2cdd515227cf40944848121ed528845f, type: 2}
-  moveSpeed: 2
+  moveSpeed: 1.4
   rotationSpeed: 900
 --- !u!212 &212550426281485636
 SpriteRenderer:

@@ -386,10 +386,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
   boundary:
-    Top: 5
-    Bottom: -5
-    Left: -9
-    Right: 9
+    Top: 2.5
+    Bottom: -2.5
+    Left: -2.5
+    Right: 2.5
   isColliding: 0
   height: 0
   width: 0

@@ -99,22 +99,7 @@ public class PlayerBehaviour : MonoBehaviour
                     transform.position.x - (this.speed * Mathf.Sin(newDirection * Mathf.Deg2Rad)),
                     transform.position.y - (this.speed * Mathf.Cos(newDirection * Mathf.Deg2Rad)));
             }
-            if (Input.GetAxis("Vertical") > 0.2)
-            {
-                if((Mathf.Abs(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x) > 0.1) &&
-                  (Mathf.Abs(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y) > 0.1)) {
-                    transform.position = new Vector2(
-                    transform.position.x - (this.speed * Mathf.Cos(newDirection * Mathf.Deg2Rad)),
-                    transform.position.y + (this.speed * Mathf.Sin(newDirection * Mathf.Deg2Rad)));
-                  }
 
-            }
-            if (Input.GetAxis("Vertical") < -0.2)
-            {
-                transform.position = new Vector2(
-                    transform.position.x + (this.speed * Mathf.Cos(newDirection * Mathf.Deg2Rad)),
-                    transform.position.y - (this.speed * Mathf.Sin(newDirection * Mathf.Deg2Rad)));
-            }
 
     }
 

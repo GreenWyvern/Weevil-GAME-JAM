@@ -25,10 +25,12 @@ public class EnemyBehaviour : MonoBehaviour {
 	void Update () {
 
 		transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
-		Vector3 moveDirection = target.transform.position - transform.position;;
+		Vector3 moveDirection = target.transform.position - transform.position;
 		if (moveDirection != Vector3.zero) {
 			float angle = Mathf.Atan2 (moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis(angle, new Vector2(0,1));
+			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
+			transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * moveSpeed);
+
 		}
 	}
 }

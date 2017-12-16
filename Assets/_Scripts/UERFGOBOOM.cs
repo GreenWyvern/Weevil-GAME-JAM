@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UERFGOBOOM : MonoBehaviour {
 
@@ -25,6 +26,7 @@ public class UERFGOBOOM : MonoBehaviour {
         {
             Destroy(this.gameObject);
             healthtext.text = "DED M8";
+            SceneManager.LoadScene("End");
         }
     }
 }
